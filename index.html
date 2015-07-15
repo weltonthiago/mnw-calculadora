@@ -1,52 +1,51 @@
-
+<!doctype html>
 <html>
-	
-<head>
-		
-<meta charset="utf-8" />
-		
-<style type="text/css">
-			
-body{
-				
-background: url("logo.jpg");
-				
-background-repeat: no-repeat;
-				
-background-size: 100%;
-			
-}
-			
-.texto {
-				
-color: #0000ff;
-				
-background-color: rgba(255, 255, 255, 0.2);
-				
-width: 300px;
-				
-font-size: 20px;
-				
-text-align: center;
-				
-margin: 0px auto;
-				
-padding: 20px;
-				
-margin-top: 100px;
-			
-}
-		
-</style>
-	
-</head>
-	
-<body>
-
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-<p align="center"><font size="4" color="#4000FF">Telefone: (31) 3077-1566 | Celular: (31) 9207-7410 | Email: welton@weskinformatica.com</font>
+    <head>
+        <title>Calculadora - ES2</title>
+        <meta charset="UTF-8">
+        <link type="text/css" rel="stylesheet" href="default.css" />    
+    </head>
+    <body> 
 
 
-</p>
-</body>
+        <div class="div-body-calc clearfix">
+            <div class="clearfix" style="padding: 5px;">
+                <h1>Calculadora</h1>
+            </div>
+            <div class="clearfix">
+                <div class="div-quadrado">
+                    <input type="text" class="input-in" id="num1" maxlength="9" /> <br />
+                    <input type="text" class="input-in" id="num2" maxlength="9" />
+                </div>
+                <div class="div-quadrado clearfix" style="padding-top: 5px;">
+                    <div class="clearfix">
+                        <input type="button" class="operacao" value="+" />
+                        <input type="button" class="operacao" value="-" />
+                    </div>
+                    <div class="clearfix">
+                        <input type="button" class="operacao" value="*" />
+                        <input type="button" class="operacao" value="/" />
+                    </div>
+                    <div class="clearfix">
+                        <input type="button" class="operacao" value="P" />
+                        <input type="button" class="operacao" value="R" />
+                    </div>
+                </div>
+                <div class="div-quadrado">
+                    <input type="text" class="input-out" id="result" value="" disabled="disabled" />
+                </div>
+            </div>
+            <div class="clearfix">
+                <input type="button" value="Limpar" id="limpar" class="limpar" />
+                <input type="button" value="Exibir Histórico" id="exibe_hist" class="limpar" style="width: 160px;" />
+            </div>
+            <div class="clearfix" id="div-historico">
+                
+            </div>
+        </div>
+        
+
+        <script type="text/javascript" src="jquery.js"></script>   
+        <script type="text/javascript" src="custom.js"></script>   
+    </body>
 </html>

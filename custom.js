@@ -20,6 +20,14 @@ var getDataAtual = function () {
 	return pad(dia, 2) + "/" + pad(mes, 2) + "/" + pad(ano, 4) + " " + pad(hora, 2) + ":" + pad(minuto, 2) + ":" + pad(segundo, 2);
 };
 
+var incrementar = function ( value ){
+    return value + 1;
+};
+
+var decrementar = function ( value ){
+    return value - 1;
+};
+
 $(document).ready(function(){
     
     $(".operacao").on("click", function(){
@@ -29,10 +37,7 @@ $(document).ready(function(){
     	var num2 = $("#num2").val();
     	var result = "";
 
-        num1 = num1.replace(".", "");
         num1 = num1.replace(",", ".");
-
-        num2 = num2.replace(".", "");
         num2 = num2.replace(",", ".");
 
     	if ( !num1 ) {
@@ -50,12 +55,37 @@ $(document).ready(function(){
 
     		switch ( op ) {
     			case "+":
-    				result = num1 + num2;
+                    if ( num1.toString().indexOf(".") > -1 || num2.toString().indexOf(".") > -1 ) { // se for numero decimal, fazer usando soma normal
+                        result =  num1 + num2;
+                    } else { // se for numero inteiro, fazer com funcao de incrementar
+                        soma = 0;
+                        for(i = 1; i <= num1; i++) {
+                            soma = incrementar(soma);
+                        }
+
+                        for(i = 1; i <= num2; i++) {
+                            soma = incrementar(soma);
+                        }
+
+                        result = soma;
+                    }
+                    
     				historico.push("(" + getDataAtual() + ") " + num1 + " + " + num2 + " = " + result);
     			break;
 
     			case "-":
-    				result = num1 - num2;
+                    if ( num1.toString().indexOf(".") > -1 || num2.toString().indexOf(".") > -1 ) { // se for numero decimal, fazer usando subtração normal
+                        result =  num1 - num2;
+                    } else { // se for numero inteiro, fazer com funcao de decrementar
+                        // usando funcoes decrementar
+                        subtracao = num1;
+                        for(i = 1; i <= num2; i++) {
+                            subtracao = decrementar(subtracao);
+                        }
+
+                        result = subtracao;
+                    }
+                    
     				historico.push("(" + getDataAtual() + ") " + num1 + " - " + num2 + " = " + result);
     			break;
 

@@ -1,5 +1,6 @@
 body {
     font-family: 'Arial';
+    background-color: #fafafa;
 }
 
 h1 {
@@ -22,10 +23,11 @@ h1 {
 
 
 .div-body-calc {
-    border: 3px solid #177bbe;
-    width: 470px;
+    width: 710px;
     margin: 0px auto;
-    border-radius: 3px;
+    box-shadow: 0 0 6px #9b9b9b;
+    background-color: #ffffff;
+    padding: 20px;
 }
 
 .div-body-calc .div-quadrado {
@@ -43,8 +45,10 @@ h1 {
     border: none;
     border-bottom: solid 2px #c9c9c9;
     transition: border 0.3s;
-    background-color: #dedede;
+    background-color: #ededed;
+    height: 58px;
     color: #177bbe;
+    box-shadow: 0 0 2px #939393;
 }
 
 .div-body-calc .div-quadrado .input-out {
@@ -58,9 +62,10 @@ h1 {
     border: none;
     border-bottom: solid 2px #3498db;
     transition: border 0.3s;
-    background-color: #dedede;
-    height: 100px;
+    background-color: #ededed;
+    height: 58px;
     color: #177bbe;
+    box-shadow: 0 0 2px #939393;
 }
 
 .div-body-calc .div-quadrado .operacao {
@@ -78,7 +83,7 @@ h1 {
     border: 0px;
     margin: 2px;
     cursor: pointer;
-    border-radius: 20px;
+    box-shadow: 0 0 2px #939393;
 }
 
 .div-body-calc .div-quadrado .operacao:hover {
